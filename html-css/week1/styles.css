@@ -1,0 +1,191 @@
+
+body{
+    margin:auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color:black;
+    
+   
+    
+
+}
+header{
+    width:60%;
+    margin:auto;
+    background-color:#E3F8FE;
+    opacity: 0.5;
+   padding-bottom:2em;
+
+    
+
+  
+    
+
+
+}
+.flex-container{
+   
+    top:5%;
+    display: flex;
+
+    padding: 0.5em 0 0.5em 0;
+    width: 100%;
+
+    justify-content: center;
+    border-bottom: thin solid #1F7A8C ;
+    
+   
+
+  
+
+
+
+}
+
+
+.flex-item{
+    text-align: center;
+    height:2em;
+    line-height: 2em;
+    margin: 0 .5em 0 .5em;
+    flex-basis: 7em;
+}
+ a{
+    text-decoration: none;
+    color:#1F7A8C;
+}
+
+a:hover
+{
+    color:#1D3557;
+}
+
+.background{
+    padding-top:1em;
+   position: relative;
+}
+
+#bg{
+    display: block;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    height:auto;
+    
+}
+
+h1{
+    margin-left:4%;
+}
+
+#about{
+    
+        margin:auto;
+        width:60%;
+        background-color:#E3F8FE;
+         opacity: 0.5;
+         padding-top:2em;
+         border-top: thin solid #1F7A8C ;
+
+         
+         border-bottom: thin solid #1F7A8C ;
+         
+    
+    }
+
+    .aboutme{
+        display: flex;
+        
+    }
+
+   .description{
+       max-width: 50%;
+       margin:0 0 0 10%;
+   }
+  .images{
+    margin-left:4%;
+  }
+
+    #person{
+       
+        position:absolute;
+        z-index: 2;
+        margin: 1% 0 0 1%; 
+    
+    }
+    #image{
+        position:relative;
+     
+        z-index: 1;
+        margin-left:3%;
+    }
+
+   .description ul li{
+    list-style-type: circle;
+    padding:1% 0;
+  }
+
+  #experience{
+      display:flex;
+    
+      
+      justify-content: center;
+      
+       margin:0 0 0 7%;
+  }
+#experience ul li{
+    
+       padding:2% 0;
+      
+}
+  #education{
+  margin-left:5%;
+  
+  }
+
+  #work{
+    margin-left: 15%;
+  }
+
+  #resources{
+    width:60%;
+    margin:auto;
+    background-color:#E3F8FE;
+    opacity: 0.5;
+   padding-bottom:2em;
+   padding-top: 2em;
+   display: flex;
+   justify-content: center;
+   border-bottom: thin solid #1F7A8C ;
+   
+  }
+
+  #resources ul li{
+      list-style-type: none;
+      padding:1% 1%;
+      
+  }
+#contacts{
+    width:60%;
+    margin:auto;
+    background-color:#E3F8FE;
+    opacity: 0.5;
+   padding-bottom:2em;
+   padding-top: 2em;
+    border-bottom: thin solid #1F7A8C ;
+    display: block;
+   
+}
+
+.contact{
+   
+    margin-left:4%
+}
+#footer{
+    width:60%;
+    margin:auto;
+    background-color:#E3F8FE;
+    opacity: 0.5;
+    display:flex;
+    justify-content: center;
+}
