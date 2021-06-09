@@ -1,0 +1,150 @@
+body{
+    
+    font-family: 'Roboto', sans-serif;
+    font-size:1em;
+    
+
+}
+
+.flex-container{
+   
+   
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    margin-left:15%;
+    padding: 0.5em 0 0.5em 0;
+    
+}
+
+
+nav .flex-item{
+    text-align: center;
+    line-height:2em;
+    flex-basis: 6em;
+    
+    
+}
+.top-page h1{
+    margin-left:15%;
+}
+
+.top-page p{
+    margin-left:15%;
+    color:grey;
+    
+}
+
+.top-page{
+    background-color: #fafafa;
+    padding :2em;
+}
+
+nav a{color:black;
+text-decoration:none;
+}
+
+nav a:hover{color:grey;}
+
+.description{
+    text-align: left;
+    justify-content: left;
+  
+    flex-basis: 40%;
+    color:grey;
+}
+
+h2 {
+    color:black;
+}
+h3{
+    color:black;
+}
+.description{
+    
+  
+    flex-basis: 25%;
+    color:grey;
+}
+.main-content{
+    text-align: left;
+    justify-content: right;
+  
+    flex-basis: 35%;
+    color:grey;
+    margin-left:15%;
+    padding:0.2em;
+}
+.main-content img{ margin:2em 0.5em 0 0;}
+
+footer{
+    background-color:#6736cd;
+    color:white;
+    margin-top:3em;
+    
+    
+}
+.footer-container{
+    display: flex;
+    margin-left: 15%;
+}
+.footer-item{
+    text-align: center;
+    margin: 0 .5em 0 .5em;
+    flex-basis:20%;
+}
+
+ul li{
+    list-style-type: none;
+   
+    text-align: left;
+    margin-top:5%;
+}
+ul li:first-of-type{
+    font-weight: bold;
+}
+
+footer a{
+ color:white;
+ text-decoration: none;
+}
+footer a:hover{
+    color:black;
+   }
+
+   .border {
+   border-bottom: 1px solid pink ;
+   border-bottom-width: thin;
+   
+}
+
+@media only screen and (max-width: 700px) {
+    .flex-container {
+        display: block;
+      margin: 10px 90px;
+      width:58%;
+    }
+    #background_image{
+        margin: auto;
+        width: 90%;
+    }
+
+   .footer-container{
+       display: block;
+   }
+
+   .footer-item{
+       margin-top:3em;
+   }
+   .main-content{
+       justify-content: center;
+       margin-left: 0;
+   }
+   .main-content img{
+       width: 70px;;
+   
+    }
+    section.flexcontainer{
+        justify-content: left;
+    }
+  }
