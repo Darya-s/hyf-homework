@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+</head>
+
+<body>
+    <div class="main-layout">
+        <header>
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+            <p> Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details
+                about your first...</p>
+        </header>
+
+        <section>
+
+            <h2>1/4tell us who you are?</h2>
+            <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following: </p>
+
+
+
+            <div class="meter">
+                <span style="width: 25%"></span>
+            </div>
+
+
+            <form>
+                <div class="container">
+                    <div>
+                        <div class="box-1">
+                            <label for="input-first-name">First Name*</label>
+                            <input type="text" id="input-first-name" required>
+                        </div>
+
+                        <div class="box-2">
+                            <label for="input-last-name">Last Name*</label>
+                            <input type="text" id="input-last-name" required>
+                        </div>
+
+                    </div>
+
+                    <div> <label for="input-country">Country</label>
+                        <input type="text" id="input-country" required></div>
+
+                    <div>
+                        <div class="box-3">
+                            <label for="input-street">Street address*</label>
+                            <input type="text" id="input-street" required>
+                        </div>
+
+                        <div class="box-4">
+                            <label for="input-post-code">Post code*</label>
+                            <input type="text" id="input-postcode" pattern="[0-9]" minlength="4" maxlength="4" required>
+
+                        </div>
+                    </div>
+
+
+                    <div class="box-5">
+                        <div>
+                            <label for="input-description">Profile description </label>
+                            <small>Please provide a short description of yourself to be displayed on our social community pages.</small>
+                        </div>
+                        <input type="text" id="input-description" maxlength="500">
+
+                    </div>
+
+                    <div class="box-6">
+
+
+                    </div>
+
+                    <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+
+                    <div class="box-7">
+
+
+                        <label for="input-shipping-address">Shipping address</label>
+                        <input type="checkbox" id="input-shipping-address" checked required>
+                    </div>
+
+                    <div class="box-8">
+                        <button type="submit" id="submit-form-one"> <a href="form2.html"> Next step</a> </button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+
+    </div>
+</body>
+
+</html>
