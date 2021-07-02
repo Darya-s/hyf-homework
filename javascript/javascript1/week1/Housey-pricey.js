@@ -1,12 +1,12 @@
 
 
-let gardenSize;
+
 
 function volumeInMeters(width,height,depth){
     return width*height*depth;
 };
 
- function gardenSizeInM2(gardenSize ){
+ function gardenSizeInM2(gardenSize){
      Math.pow(gardenSize , 2);}
 
 
