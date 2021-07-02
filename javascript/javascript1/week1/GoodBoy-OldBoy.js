@@ -1,5 +1,5 @@
-const dogYearOfBirth=2021;
-const dogYearFuture=2045;
+let dogYearOfBirth=2021;
+let dogYearFuture=2045;
 let dogYear=dogYearFuture-dogYearOfBirth;
 let shouldShowResultInDogYears=true;
 
