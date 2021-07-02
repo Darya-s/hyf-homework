@@ -1,7 +1,5 @@
 
 
-
-
 function volumeInMeters(width,height,depth){
     return width*height*depth;
 };
@@ -16,7 +14,7 @@ if(petersHouse>2500000){
     console.log("Peter is paying too much!")
 }
 else if(petersHouse<2500000){
-    console.log("Peter is paying too little")
+    console.log("Peter is paying too little!")
 }
 
 let juliasHouse=(volumeInMeters(5,8,11)*2.5*1000 + gardenSizeInM2(70)*300);
