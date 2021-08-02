@@ -1,6 +1,6 @@
 const activities = [];
 let totTime = 0;
-let amount = 0;
+
 let limit = 120;
 let act = 0;
 let today = new Date();
@@ -19,7 +19,7 @@ addActivity(today.toLocaleDateString("en-US"), "Twitch", 50);
 addActivity(today.toLocaleDateString("en-US"), "Browser", 120);
 addActivity(today.toLocaleDateString("en-US"), "Twitch", 90);
 
-/* //First showStatus function, with time spent on smartphone t.
+
 function showStatus() {
   for (let i = 0; i < activities.length; i++) {
     totTime += activities[i].duration;
@@ -28,39 +28,24 @@ function showStatus() {
 }*/
 
 //IMPROVED SHOWSTATUS FUNCTION< TO SHOW ONLY AMOUNT OF ACTIVITIES extra future exercise PROBLEM: activity undefined, I could not find how to fix it.as it works for duration value extracting activities[i].duration;
-function showStatus() {
-  for (let i = 0; i < activities.length; i++) {
-    //console.log(activities[i].activity);
-    if (activities[i].activity == activities[i + 1].activity) {
-      //I do not understand how to fix problem of activity is undefined
-      amount += 0;
-    } else {
-      amount++;
+
+
+  function showStatus(activities) {
+    if (activities.length === 0) {
+      console.log("Add some activities before calling showStatus");
+      return;
     }
+
+    let time = 0;
+    for (let i = 0; i < activities.length; i++) {
+      time += activities[i].duration;
+    }
+    console.log(
+      `You have added ${activities.length} activities. They amount to ${time} min. of usage`
+    );
   }
-  return amount;
-}
 
-/*if (activities === undefined || activities.length == 0) {
-  console.log("Add some activities before calling showStatus");
-} else {
-  console.log(
-    "You have added " +
-      activities.length +
-      "activities. They amount to :" +
-      showStatus(activities) +
-      "minutes of usage"
-  );
-}
 
-do {
-  addActivity === true;
-} while (showStatus(activities) < limit);
-{
-  console.log("You have reached your limit, no more smartphoning for you!");
-}
-*/
-//Create a function for calculating the activity a user has spent the most time on.
 
 function spentMost() {
   for (let j = 0; j < activities.length; j++) {
