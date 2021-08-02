@@ -26,10 +26,10 @@ function logOutSeriesText() {
 
     let spentLife = ((hours * 100) / 700800).toFixed(3);
 
-    total += spentLife; //I have no idea why it s not letting me to add :(
+    total += parseFloat(spentLife);
 
     console.log(serie.title + " took " + spentLife + " of my life ");
   }
   console.log("In total it took " + total);
 }
-logOutSeriesText(seriesDurations);
+logOutSeriesText();
