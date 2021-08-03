@@ -1,4 +1,4 @@
-let myname = " ";
+let myname = "";
 let toDo = [];
 let toAdd = " ";
 let toRemove = " ";
@@ -6,21 +6,21 @@ let today = new Date();
 let extractName = " ";
 
 function getReply(command) {
-    if (command === "Hello my name is " + /w/) {
-        extractName = command.split(" ");
-        myname = extractName[extractName.length - 1];
-        return "Nice to meet you" + myname;
-        console.log(myname);
+    if (command == "Hello my name is Darya".match(/Hello my name is (.*)/i)) {
+        //extractName = command.split(" ");
+        //myname = extractName[extractName.length - 1];
+        myname = "Hello my name is Darya".match(/my name is (.*)/i)[0];
+        return "Nice to meet you " + myname;
     } else if (command === "What is my name") {
-        if (myname !== " ") return myname;
+        if (myname !== 0) return myname;
         else {
-            return "Error";
+            ("Error");
         }
-    } else if (command === "Add " + /abc/ + " to my todo") {
+    } else if (command === "Add".match(/Add (.*)/i) / " to my todo") {
         toAdd = command[command.length - 4];
         toDo.push(toAdd);
         return toAdd + "added to your todo";
-    } else if (command === "Remove " + /abc/ + " from my todo") {
+    } else if (command === "Remove".match(/Remove (.*)/i) / " from my todo") {
         toRemove == command[command.length - 4];
         for (let i = 0; i < toDo.length; i++) {
             if (toDo[i] === toRemove) {
@@ -36,4 +36,8 @@ function getReply(command) {
         return today.toDateString();
     }
 }
-console.log(getReply("Hello my name is Darya")); //console.log(getReply("What is my name"));   //console.log(getReply("Add washingup to my todo"));   //console.log(getReply("What is on my todo?"));   //console.log(getReply("What day is it today?"));
+console.log(getReply("Hello my name is Darya"));
+console.log(getReply("What is my name"));
+console.log(getReply("Add washingup to my todo"));
+console.log(getReply("What is on my todo?"));
+console.log(getReply("What day is it today?"));
