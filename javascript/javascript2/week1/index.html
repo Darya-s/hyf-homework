@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang=="EN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>spirit animal</title>
+
+
+</head>
+
+
+<body>
+
+
+    <div>
+        <h1>GENERATING SPIRIT ANIMAL</h1>
+
+        <label for="optional">Choose when you want to generate animal</label>
+
+
+        <select id="selection" name="options" id="options">
+  <option value="clicked">On button click</option>
+  <option value="hovered">Hover input</option>
+  <option value="written">Text written in field</option>
+
+</select>
+
+        <label for="txt">Insert your name: </label>
+
+        <input type="text" name="txt" id="inputId" />
+
+        <button id="mybtn">Generate</button>
+
+        <div id='div2'> </div>
+
+
+    </div>
+
+    <script>
+        let animals = [
+            "Flamingo ",
+            "Cheetah ",
+            "Owl ",
+            "Sheep ",
+            "Lion ",
+            "Reindeer ",
+            "Swan ",
+            "Butterfly ",
+            "Dog ",
+            "Dolphin ",
+        ];
+
+        let select = document.getElementById('selection');
+        let value = select.options[select.selectedIndex].value;
+        let btn = document.getElementById("mybtn");
+        let myinput = document.getElementById("inputId");
+
+        function genAnimal(a) {
+            let yourAnimal = a[Math.floor(Math.random() * a.length)];
+
+
+
+            let yourName = myinput.value;
+
+            let i;
+            let node = document.createElement("div");
+            let textnode = document.createTextNode(i);
+            node.appendChild(textnode);
+            document.querySelector("#div2").appendChild(node).innerHTML = yourName + "-" + yourAnimal;;
+
+            node.style.backgroundColor = "violet";
+            node.style.display = "flex";
+        };
+
+
+
+
+        if (value == "clicked") {
+            btn.addEventListener("click", function() {
+
+                genAnimal(animals);
+
+            });
+        }
+
+        if (value == "hovered") {
+
+            myinput.addEventListener("mouseover", function(event) {
+
+                event.target.style.background = "yellow";
+                genAnimal(animals);
+
+            });
+        }
+        if (value == "written") {
+            myinput.addEventListener("input", function(event) {
+
+                event.target.style.background = "pink";
+                genAnimal(animals);
+
+            });
+        }
+    </script>
+
+</body>
+
+</html>
