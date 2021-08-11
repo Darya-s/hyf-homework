@@ -52,10 +52,20 @@
             "Dolphin ",
         ];
 
+        function getSelect(sel) {
+            let value = sel.options[sel.selectedIndex].value;
+            return value;
+
+        }
+
         let select = document.getElementById('selection');
-        let value = select.options[select.selectedIndex].value;
+
         let btn = document.getElementById("mybtn");
         let myinput = document.getElementById("inputId");
+
+        //value.onchange = getSelect(select);
+
+
 
         function genAnimal(a) {
             let yourAnimal = a[Math.floor(Math.random() * a.length)];
@@ -77,27 +87,26 @@
 
 
 
-        if (value == "clicked") {
+        if (getSelect(select) === "clicked") {
             btn.addEventListener("click", function() {
 
                 genAnimal(animals);
 
             });
         }
-
-        if (value == "hovered") {
+        if (getSelect(select) === "hovered") {
 
             myinput.addEventListener("mouseover", function(event) {
 
-                event.target.style.background = "yellow";
+                event.target.style.backgroundColor = "yellow";
                 genAnimal(animals);
 
             });
         }
-        if (value == "written") {
+        if (getSelect(select) === "written") {
             myinput.addEventListener("input", function(event) {
 
-                event.target.style.background = "pink";
+                event.target.style.backgroundColor = "pink";
                 genAnimal(animals);
 
             });
