@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#maindiv {
+    display: block;
+    width: 960px;
+    background-color: azure;
+    margin: auto;
+    text-align: center;
+    font-size: 20pt;
+    line-height: 50pt;
+}
+
+.field {
+    border-color: cadetblue;
+    border-width: 2px;
+    height: 20px;
+}
