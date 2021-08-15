@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>spirit animal</title>
 
 
@@ -14,28 +14,30 @@
 <body>
 
 
-    <div>
+    <div id="maindiv">
+
         <h1>GENERATING SPIRIT ANIMAL</h1>
+        <div>
+            <label for="optional">Choose when you want to generate animal</label>
 
-        <label for="optional">Choose when you want to generate animal</label>
 
-
-        <select id="selection" name="options" id="options">
+            <select id="selection" class="field" name="options">
   <option value="clicked">On button click</option>
   <option value="hovered">Hover input</option>
   <option value="written">Text written in field</option>
 
-</select>
+            </select>
+        </div>
+        <div>
+            <label for="txt">Insert your name: </label>
 
-        <label for="txt">Insert your name: </label>
+            <input id="myIn" class=field type="text" />
 
-        <input type="text" name="txt" id="inputId" />
+            <button id="mybtn">Generate</button>
 
-        <button id="mybtn">Generate</button>
+            <div id='div2'> </div>
 
-        <div id='div2'> </div>
-
-
+        </div>
     </div>
 
     <script>
@@ -61,7 +63,7 @@
         let select = document.getElementById('selection');
 
         let btn = document.getElementById("mybtn");
-        let myinput = document.getElementById("inputId");
+        let myinput = document.getElementById("myIn");
 
         //value.onchange = getSelect(select);
 
@@ -78,7 +80,7 @@
             let node = document.createElement("div");
             let textnode = document.createTextNode(i);
             node.appendChild(textnode);
-            document.querySelector("#div2").appendChild(node).innerHTML = yourName + "-" + yourAnimal;;
+            document.querySelector("#maindiv").appendChild(node).innerHTML = yourName + "-" + yourAnimal;;
 
             node.style.backgroundColor = "violet";
             node.style.display = "flex";
