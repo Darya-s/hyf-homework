@@ -19,7 +19,7 @@ function renderProducts(products) {
 
 
 
-        ul.appendChild(node).innerHTML = "<b>" + products[j].name + " </b><br> " + products[j].price + "$ <br>" + " Rating: " + products[j].rating;
+        ul.appendChild(node).innerHTML = "<b>" + products[j].name + " </b><br> " + products[j].price + "$ <br>" + " Rating: " + products[j].rating + "<br><br><br>";
         node.style.display = "block";
         node.style.marginLeft = "15px";
 
