@@ -54,65 +54,66 @@
             "Dolphin ",
         ];
 
-        function getSelect(sel) {
-            let value = sel.options[sel.selectedIndex].value;
-            return value;
-
-        }
-
-        let select = document.getElementById('selection');
 
         let btn = document.getElementById("mybtn");
         let myinput = document.getElementById("myIn");
 
-        //value.onchange = getSelect(select);
 
+        let select = document.getElementById('selection');
+
+        select.addEventListener('change', function(event) {
+            if (event.target.value == "clicked") {
+                myinput.removeEventListener('mouseover');
+                myinput.removeEventListener('mouseout');
+                myinput.removeEventListener('input');
+                return btn.addEventListener("click", function(e) {
+
+                    btn.style.backgroundColor = "blue";
+                    genAnimal(animals);
+
+                });
+            }
+            if (event.target.value == "hovered") {
+                btn.removeEventListener('click');
+                return myinput.addEventListener("mouseover", function(event) {
+
+                    event.target.style.backgroundColor = "yellow";
+                    genAnimal(animals);
+
+                    myinput.addEventListener("mouseout", function(event) {
+
+                        event.target.style.backgroundColor = "grey";
+
+                    });
+
+
+
+                });
+            }
+            if (event.target.value == "written") {
+                myinput.removeEventListener('mouseover');
+                myinput.removeEventListener('mouseout');
+                btn.removeEventListener('click');
+                return myinput.addEventListener("input", function(event) {
+
+                    event.target.style.backgroundColor = "pink";
+                    //genAnimal(animals);
+
+                });
+            }
+
+
+        });
 
 
         function genAnimal(a) {
             let yourAnimal = a[Math.floor(Math.random() * a.length)];
-
-
-
             let yourName = myinput.value;
-
-            let i;
-            let node = document.createElement("div");
-            let textnode = document.createTextNode(i);
-            node.appendChild(textnode);
-            document.querySelector("#maindiv").appendChild(node).innerHTML = yourName + "-" + yourAnimal;;
-
+            let node = document.querySelector("#div2");
             node.style.backgroundColor = "violet";
             node.style.display = "flex";
+            node.innerHTML = yourName + "-" + yourAnimal;
         };
-
-
-
-
-        if (getSelect(select) === "clicked") {
-            btn.addEventListener("click", function() {
-
-                genAnimal(animals);
-
-            });
-        }
-        if (getSelect(select) === "hovered") {
-
-            myinput.addEventListener("mouseover", function(event) {
-
-                event.target.style.backgroundColor = "yellow";
-                genAnimal(animals);
-
-            });
-        }
-        if (getSelect(select) === "written") {
-            myinput.addEventListener("input", function(event) {
-
-                event.target.style.backgroundColor = "pink";
-                genAnimal(animals);
-
-            });
-        }
     </script>
 
 </body>
