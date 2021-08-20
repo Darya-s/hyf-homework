@@ -13,9 +13,14 @@ const ul = document.getElementById("products_list");
 const input = document.getElementById("filter_products");
 const value = input.value;
 
-input.addEventListener('input', filtered_products);
+input.addEventListener('input', render_products);
+
+
+
 
 let filtered_products = products.filter((product) => {
+
+
 
     if (product.name.toLowerCase().includes(value.toLowerCase())) {
 
@@ -24,6 +29,9 @@ let filtered_products = products.filter((product) => {
 
 
 });
+
+
+
 
 
 
