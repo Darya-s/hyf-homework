@@ -54,8 +54,71 @@
             "Dolphin ",
         ];
 
-
         let btn = document.getElementById("mybtn");
+        let myinput = document.getElementById("myIn");
+
+
+        let select = document.getElementById('selection');
+
+        // for initial (first value in select,  :) )
+
+        btn.addEventListener("click", genAnimal);
+
+
+
+        //change event of select
+
+        select.addEventListener("change", (event) => {
+
+            if (event.target.value === "clicked") {
+
+                myinput.removeEventListener("mouseover", genAnimal);
+
+                myinput.removeEventListener("input", genAnimal);
+
+                btn.addEventListener("click", genAnimal);
+
+            }
+
+            if (event.target.value === "hovered") {
+
+                myinput.removeEventListener("input", genAnimal);
+
+                btn.removeEventListener("click", genAnimal);
+
+                myinput.addEventListener("mouseover", genAnimal);
+                myinput.backgroundColor = "purple"
+
+            }
+
+            if (event.target.value === "written") {
+
+                myinput.removeEventListener("mouseover", genAnimal);
+
+                btn.removeEventListener("click", genAnimal);
+
+                myinput.addEventListener("input", genAnimal);
+
+            }
+
+        })
+
+
+
+        //also get Animal function should be modified:
+
+        function genAnimal() {
+
+            let yourAnimal = animals[Math.floor(Math.random() * animals.length)];
+            let yourName = myinput.value;
+            let node = document.querySelector("#div2");
+            node.style.backgroundColor = "violet";
+            node.style.display = "flex";
+            node.innerHTML = yourName + "-" + yourAnimal;
+        }
+
+
+        /*let btn = document.getElementById("mybtn");
         let myinput = document.getElementById("myIn");
 
 
@@ -114,6 +177,7 @@
             node.style.display = "flex";
             node.innerHTML = yourName + "-" + yourAnimal;
         };
+        */
     </script>
 
 </body>
