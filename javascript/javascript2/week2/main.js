@@ -13,7 +13,7 @@ const ul = document.getElementById("products_list");
 const input = document.getElementById("filter_products");
 const value = input.value;
 
-input.addEventListener('input', render_products);
+input.addEventListener('input', getProduct);
 
 
 
@@ -33,17 +33,20 @@ let filtered_products = products.filter((product) => {
 
 
 
+function getProduct() {
+
+    let render_products = filtered_products.map((product) => {
+
+        let li = document.createElement("li");
+
+        li.innerHTML = product.name;
+
+        return ul.appendChild(li);
 
 
-let render_products = filtered_products.map((product) => {
-
-    let li = document.createElement("li");
-
-    li.innerHTML = product.name;
 
 
-    return ul.appendChild(li);
+    });
+    return render_products;
 
-
-
-});
+};
