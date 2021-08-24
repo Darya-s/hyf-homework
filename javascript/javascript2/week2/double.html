@@ -11,13 +11,18 @@
     <script>
         let numbers = [1, 2, 3, 4];
         let newNumbers = [];
-        let oddnumbers = [];
+        newNumbers = numbers.filter(number => number % 2 != 0)
+            .map(num => num * 2);
+
+        console.log(newNumbers);
+        /* let oddnumbers = [];
 
 
-        oddnumbers = numbers.filter(number => number % 2 != 0);
+         oddnumbers = numbers.filter(number => number % 2 != 0);
 
-        newNumbers = oddnumbers.map(num => num * 2);
-        console.log("The doubled numbers are", newNumbers); // [2, 6]
+         newNumbers = oddnumbers.map(num => num * 2);
+         console.log("The doubled numbers are", newNumbers); // [2, 6]
+         */
     </script>
 
 </body>
