@@ -11,42 +11,36 @@ console.log(products);
 const products = getAvailableProducts();
 const ul = document.getElementById("products_list");
 const input = document.getElementById("filter_products");
-const value = input.value;
-
-input.addEventListener('input', getProduct);
 
 
+function renderProducts(products) {
 
 
-let filtered_products = products.filter((product) => {
-
-
-
-    if (product.name.toLowerCase().includes(value.toLowerCase())) {
-
-        return product;
-    }
-
-
-});
-
-
-
-
-function getProduct() {
-
-    let render_products = filtered_products.map((product) => {
+    let render_products = products.map((product) => {
 
         let li = document.createElement("li");
 
         li.innerHTML = product.name;
-
-        return ul.appendChild(li);
-
-
-
+        ul.appendChild(li);
 
     });
+
     return render_products;
 
-};
+}
+
+function search(event) {
+    let lower = event.target.value.toLowerCase();
+    let filtered_products = products.filter((product) =>
+        product.name.toLowerCase().includes(lower));
+    renderProducts(filtered_products);
+}
+
+
+input.addEventListener('input', search);
+
+
+//input.addEventListener('input', (e) => filtered_products(e.target.value));
+
+
+//input.addEventListener('input', getProduct);
