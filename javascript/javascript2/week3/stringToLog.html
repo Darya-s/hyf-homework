@@ -1,0 +1,54 @@
+<head>
+    <title>stringToLog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+    <main>
+        <button id="mybtn">Click me!</button>
+
+
+
+
+
+    </main>
+    <script>
+        let btn = document.getElementById("mybtn");
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+
+
+        function delaying(delay, stringToLog) {
+            setTimeout(() => {
+
+                console.log(stringToLog);
+            }, delay * 1000);
+
+        }
+
+
+        btn.addEventListener('click', delaying(5, "Called after 5 seconds"));
+
+        //   if (script.readyState === "loaded" || script.readyState === "complete") {
+
+
+        //  }
+
+        function earthLogger() {
+            (console.log("Earth"));
+        }
+
+        function saturnLogger() {
+            (console.log("Saturn"));
+        }
+
+        function planetLogFunction(param) {
+            return param;
+        }
+
+        planetLogFunction(earthLogger);
+        planetLogFunction(saturnLogger);
+    </script>
+
+</body>

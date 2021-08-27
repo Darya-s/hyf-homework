@@ -1,0 +1,37 @@
+<head>
+    <title>HyfBay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+
+        <button id="location">Log location</button>
+
+        <div id="map"></div>
+
+
+    </main>
+    <script>
+        const mapLink = document.querySelector('#map-link');
+        let loc = document.getElementById("location");
+        let div = document.getElementById("map");
+
+
+
+
+
+
+        loc.addEventListener('click', () => {
+            navigator.geolocation.getCurrentPosition((position) => {
+
+                div.innerHTML = 'Latitude : ' + position.coords.latitude + ' Longitude : ' + position.coords.longitude;
+
+
+            });
+        });
+    </script>
+
+</body>
+<html>
