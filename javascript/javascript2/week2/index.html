@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang=="EN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>spirit animal</title>
+
+
+</head>
+
+
+<body>
+
+
+    <div id="maindiv">
+
+        <h1>GENERATING SPIRIT ANIMAL</h1>
+        <div>
+            <label for="optional">Choose when you want to generate animal</label>
+
+
+            <select id="selection" class="field" name="options">
+  <option value="clicked">On button click</option>
+  <option value="hovered">Hover input</option>
+  <option value="written">Text written in field</option>
+
+            </select>
+        </div>
+        <div>
+            <label for="txt">Insert your name: </label>
+
+            <input id="myIn" class=field type="text" />
+
+            <button id="mybtn">Generate</button>
+
+            <div id='div2'> </div>
+
+        </div>
+    </div>
+
+    <script>
+        let animals = [
+            "Flamingo ",
+            "Cheetah ",
+            "Owl ",
+            "Sheep ",
+            "Lion ",
+            "Reindeer ",
+            "Swan ",
+            "Butterfly ",
+            "Dog ",
+            "Dolphin ",
+        ];
+
+        function getSelect(sel) {
+            let value = sel.options[sel.selectedIndex].value;
+            return value;
+
+        }
+
+        let select = document.getElementById('selection');
+
+        let btn = document.getElementById("mybtn");
+        let myinput = document.getElementById("myIn");
+
+        //value.onchange = getSelect(select);
+
+
+
+        function genAnimal(a) {
+            let yourAnimal = a[Math.floor(Math.random() * a.length)];
+
+
+
+            let yourName = myinput.value;
+
+            let i;
+            let node = document.createElement("div");
+            let textnode = document.createTextNode(i);
+            node.appendChild(textnode);
+            document.querySelector("#maindiv").appendChild(node).innerHTML = yourName + "-" + yourAnimal;;
+
+            node.style.backgroundColor = "violet";
+            node.style.display = "flex";
+        };
+
+
+
+
+        if (getSelect(select) === "clicked") {
+            btn.addEventListener("click", function() {
+
+                genAnimal(animals);
+
+            });
+        }
+        if (getSelect(select) === "hovered") {
+
+            myinput.addEventListener("mouseover", function(event) {
+
+                event.target.style.backgroundColor = "yellow";
+                genAnimal(animals);
+
+            });
+        }
+        if (getSelect(select) === "written") {
+            myinput.addEventListener("input", function(event) {
+
+                event.target.style.backgroundColor = "pink";
+                genAnimal(animals);
+
+            });
+        }
+    </script>
+
+</body>
+
+</html>

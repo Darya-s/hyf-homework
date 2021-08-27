@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang=="EN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>spirit animal</title>
+
+
+</head>
+
+
+<body>
+
+
+    <div id="maindiv">
+
+        <h1>GENERATING SPIRIT ANIMAL</h1>
+        <div>
+            <label for="optional">Choose when you want to generate animal</label>
+
+
+            <select id="selection" class="field" name="options">
+  <option value="clicked">On button click</option>
+  <option value="hovered">Hover input</option>
+  <option value="written">Text written in field</option>
+
+            </select>
+        </div>
+        <div>
+            <label for="txt">Insert your name: </label>
+
+            <input id="myIn" class=field type="text" />
+
+            <button id="mybtn">Generate</button>
+
+            <div id='div2'> </div>
+
+        </div>
+    </div>
+
+    <script>
+        let animals = [
+            "Flamingo ",
+            "Cheetah ",
+            "Owl ",
+            "Sheep ",
+            "Lion ",
+            "Reindeer ",
+            "Swan ",
+            "Butterfly ",
+            "Dog ",
+            "Dolphin ",
+        ];
+
+        let btn = document.getElementById("mybtn");
+        let myinput = document.getElementById("myIn");
+
+
+        let select = document.getElementById('selection');
+
+        // for initial (first value in select,  :) )
+
+        btn.addEventListener("click", genAnimal);
+
+
+
+        //change event of select
+
+        select.addEventListener("change", (event) => {
+
+            if (event.target.value === "clicked") {
+
+                myinput.removeEventListener("mouseover", genAnimal);
+
+                myinput.removeEventListener("input", genAnimal);
+
+                btn.addEventListener("click", genAnimal);
+
+            }
+
+            if (event.target.value === "hovered") {
+
+                myinput.removeEventListener("input", genAnimal);
+
+                btn.removeEventListener("click", genAnimal);
+
+                myinput.addEventListener("mouseover", genAnimal);
+                myinput.backgroundColor = "purple"
+
+            }
+
+            if (event.target.value === "written") {
+
+                myinput.removeEventListener("mouseover", genAnimal);
+
+                btn.removeEventListener("click", genAnimal);
+
+                myinput.addEventListener("input", genAnimal);
+
+            }
+
+        })
+
+
+
+        //also get Animal function should be modified:
+
+        function genAnimal() {
+
+            let yourAnimal = animals[Math.floor(Math.random() * animals.length)];
+            let yourName = myinput.value;
+            let node = document.querySelector("#div2");
+            node.style.backgroundColor = "violet";
+            node.style.display = "flex";
+            node.innerHTML = yourName + "-" + yourAnimal;
+        }
+
+
+        /*let btn = document.getElementById("mybtn");
+        let myinput = document.getElementById("myIn");
+
+
+        let select = document.getElementById('selection');
+
+        select.addEventListener('change', function(event) {
+            if (event.target.value == "clicked") {
+                myinput.removeEventListener('mouseover');
+                myinput.removeEventListener('mouseout');
+                myinput.removeEventListener('input');
+                return btn.addEventListener("click", function(e) {
+
+                    btn.style.backgroundColor = "blue";
+                    genAnimal(animals);
+
+                });
+            }
+            if (event.target.value == "hovered") {
+                btn.removeEventListener('click');
+                return myinput.addEventListener("mouseover", function(event) {
+
+                    event.target.style.backgroundColor = "yellow";
+                    genAnimal(animals);
+
+                    myinput.addEventListener("mouseout", function(event) {
+
+                        event.target.style.backgroundColor = "grey";
+
+                    });
+
+
+
+                });
+            }
+            if (event.target.value == "written") {
+                myinput.removeEventListener('mouseover');
+                myinput.removeEventListener('mouseout');
+                btn.removeEventListener('click');
+                return myinput.addEventListener("input", function(event) {
+
+                    event.target.style.backgroundColor = "pink";
+                    //genAnimal(animals);
+
+                });
+            }
+
+
+        });
+
+
+        function genAnimal(a) {
+            let yourAnimal = a[Math.floor(Math.random() * a.length)];
+            let yourName = myinput.value;
+            let node = document.querySelector("#div2");
+            node.style.backgroundColor = "violet";
+            node.style.display = "flex";
+            node.innerHTML = yourName + "-" + yourAnimal;
+        };
+        */
+    </script>
+
+</body>
+
+</html>
