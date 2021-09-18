@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Odd numbers</title>
+</head>
+
+<body>
+
+
+    <script>
+        let numbers = [1, 2, 3, 4];
+        let newNumbers = [];
+        newNumbers = numbers.filter(number => number % 2 != 0)
+            .map(num => num * 2);
+
+        console.log(newNumbers);
+        /* let oddnumbers = [];
+
+
+         oddnumbers = numbers.filter(number => number % 2 != 0);
+
+         newNumbers = oddnumbers.map(num => num * 2);
+         console.log("The doubled numbers are", newNumbers); // [2, 6]
+         */
+    </script>
+
+</body>
+
+</html>
