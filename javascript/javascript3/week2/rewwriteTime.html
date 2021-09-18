@@ -1,0 +1,49 @@
+<head>
+    <title>HyfBay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+</head>
+
+<body>
+    <main>
+
+
+    </main>
+
+    <script>
+        function setTimeoutPromise(timer) {
+
+            return new Promise((resolve, reject) => {
+                if (timer != "") {
+                    setTimeout(() => {
+                        resolve();
+                    }, timer * 1000)
+                } else {
+                    reject("You did not specified timer!");
+                }
+            })
+
+        }
+
+        setTimeoutPromise(3).then(() => {
+            console.log("Called after 3 seconds");
+        });
+
+
+
+        getCurrentLocation()
+            .then((position) => {
+                if (navigator.geolocation.getCurrentPosition) {
+                    console.log(position);
+                }
+
+
+            })
+
+        .catch((error) => {
+            // called if there was an error getting the users location
+            console.log(error);
+        });
+    </script>
+</body>
