@@ -28,27 +28,26 @@
         }
 
 
-        btn.addEventListener('click', delaying(5, "Called after 5 seconds"));
+        btn.addEventListener('click', () => delaying(5, "Called after 5 seconds"));
 
         //   if (script.readyState === "loaded" || script.readyState === "complete") {
 
 
         //  }
 
-        function earthLogger() {
-            (console.log("Earth"));
+        let earthLogger = () => {
+            return "Earth";
         }
 
-        function saturnLogger() {
-            (console.log("Saturn"));
+        let saturnLogger = () => {
+            return "Saturn";
         }
 
-        function planetLogFunction(param) {
-            return param;
+        function planetLogFunction() {
+            console.log(earthLogger, saturnLogger)
         }
 
-        planetLogFunction(earthLogger);
-        planetLogFunction(saturnLogger);
+        planetLogFunction();
     </script>
 
 </body>
