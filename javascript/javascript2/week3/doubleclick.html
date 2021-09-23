@@ -9,33 +9,17 @@
 
         <button id="btn">Click</button>
 
-        <div id="mydiv"></div>
+
 
 
     </main>
     <script>
         let btn = document.getElementById("btn");
-        let div = document.getElementById("mydiv");
-
-
-
-
-
-        let count = 0;
-
 
 
         btn.addEventListener('dblclick', function() {
 
-            setTimeout(() => {
-                count++;
-                if (count >= 2) {
-                    console.log("Double clicked!");
-                }
-
-            }, 500);
-
-
+            console.log("Double clicked!");
 
         });
     </script>
