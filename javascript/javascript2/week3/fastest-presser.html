@@ -107,7 +107,7 @@
             for (let i = 0; i < 2; i++) {
                 setTimeout(() => {
 
-                    document.removeEventListener('keypress', logKey);
+                    document.removeEventListener('keydown', logKey);
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-            document.addEventListener('keypress', logKey);
+            document.addEventListener('keydown', logKey);
 
             btnReset.addEventListener("click", resetGame);
 
