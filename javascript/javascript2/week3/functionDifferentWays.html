@@ -14,9 +14,9 @@
     <script>
         /*Create funtions that are used in these different ways:
 
-                        Create an array with 3 items. All items should be functions. Iterate through the array and call all the functions.
-                        Create a function as a const and try creating a function normally. Call both functions. Read up on this if you are interested: https://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip
-                        Create an object that has a key whose value is a function. Try calling this function.*/
+                                                                                                                                                                                                        Create an array with 3 items. All items should be functions. Iterate through the array and call all the functions.
+                                                                                                                                                                                                        Create a function as a const and try creating a function normally. Call both functions. Read up on this if you are interested: https://stackoverflow.com/questions/1013385/what-is-the-difference-between-a-function-expression-vs-declaration-in-javascrip
+                                                                                                                                                                                                        Create an object that has a key whose value is a function. Try calling this function.*/
 
 
 
@@ -54,17 +54,17 @@
             console.log("My function as const");
         }
 
-        function myFunction() {
+        /*function myFunction() {
             console.log("My function, created normally");
         }
-
+*/
 
 
         //Functions exercise 3
 
         const obj = {
             1: function() {
-                first_function(console.log('firstFunction'))
+                console.log('firstFunction');
 
             },
             2: 'Second obj',
@@ -73,19 +73,11 @@
 
         }
 
-        first_function(); //first_function is not defined //
 
-        const obj2 = {
-            1: function() {
-                return 'firstFunction';
-            },
-            2: 'Second obj',
 
-            3: 'Third obj'
 
-        }
 
-        console.log(obj2[1]); //prints whole function's code
+        console.log(obj[1]());
     </script>
 </body>
 <html>
