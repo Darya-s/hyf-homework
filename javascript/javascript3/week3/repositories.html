@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users repositories</title>
+
+</head>
+
+<body>
+    <ul id="repos">
+    </ul>
+
+    <script>
+        let repos = document.getElementById("repos");
+        let usersName = ['FlorentinaPetica', 'JiuTak', 'shabnam-ght']
+        let urls = []
+        usersName.forEach(userName => urls.push(fetch(`https://api.github.com/search/repositories?q=user:${userName}`)))
+
+        let getUsers = () => {
+            Promise.all(urls)
+                .then((responses) => {
+                    return Promise.all(responses.map((response) => response.json()));
+                })
+                .then(function(data) {
+                    console.log(data);
+
+                    let usersData = data.map((data) => data.items);
+
+                    usersData.forEach((element) => {
+                        const li = document.createElement("li");
+
+                        const repository = element;
+
+
+                        let usersRepos = "";
+                        repository.forEach(
+                            (repo) => (usersRepos += `<li><span>${repo.name}</span> : <a href="${repo.html_url}">${repo.html_url}</a></li>`)
+                        );
+
+                        li.innerHTML = `
+            <li>${repository[0].owner.login}\'s repositories</li>
+            <ul>${usersRepos}</ul>
+            `;
+
+                        repos.append(li);
+                    });
+                })
+                .catch(function(error) {
+
+                    console.log(error);
+                });
+        };
+
+        getUsers();
+    </script>
+</body>
+</html
