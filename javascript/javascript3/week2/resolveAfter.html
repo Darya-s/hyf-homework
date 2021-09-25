@@ -13,23 +13,23 @@
 
     <script>
         /*
-                                function myFunction(resolveAfter) {
+                                        function myFunction(resolveAfter) {
 
-                                    return new Promise((resolve, reject) => {
-                                        if (resolveAfter != "") {
-                                            setTimeout(() => {
-                                                resolve();
-                                            }, resolveAfter * 1000)
-                                        } else {
-                                            reject("Failure!");
+                                            return new Promise((resolve, reject) => {
+                                                if (resolveAfter != "") {
+                                                    setTimeout(() => {
+                                                        resolve();
+                                                    }, resolveAfter * 1000)
+                                                } else {
+                                                    reject("Failure!");
+                                                }
+                                            })
+
                                         }
-                                    })
 
-                                }
-
-                                myFunction(8).then(() => {
-                                    console.log(`I am called asynchronously`); // logged out after 8 seconds
-                                });*/
+                                        myFunction(8).then(() => {
+                                            console.log(`I am called asynchronously`); // logged out after 8 seconds
+                                        });*/
         async function myFunction(resolveAfter) {
 
             let promise = new Promise((resolve, reject) => {
