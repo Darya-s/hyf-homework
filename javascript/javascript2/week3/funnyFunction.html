@@ -1,0 +1,41 @@
+<head>
+    <title>FunnyJoke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+    <main>
+
+        <div id="mydiv"></div>
+
+
+    </main>
+
+
+    <script>
+        /*Create a function called jokeCreator that has three parameters:
+                                     shouldTellFunnyJoke - boolean, logFunnyJoke - function and logBadJoke - function. 
+                                     If you set shouldTellFunnyJoke to true it should call the logFunnyJoke function that should log out a funny joke. And vice versa.*/
+        function logFunnyJoke() {
+            console.log("I am a funny joke!");
+        }
+
+        function logBadJoke() {
+            console.log("I am a BAD joke!");
+        }
+
+        function jokeCreator(shouldTellFunnyJoke, logFunnyJoke, logBadJoke) {
+            if (shouldTellFunnyJoke === true) {
+                logFunnyJoke();
+            } else {
+                logBadJoke();
+            }
+
+        }
+
+        jokeCreator(true, logFunnyJoke, logBadJoke);
+    </script>
+</body>
+
+</html>

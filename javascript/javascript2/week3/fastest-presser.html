@@ -1,0 +1,203 @@
+<head>
+    <title>FastestPresser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+    <main>
+        <input id="myIn" placeholder="Enter time:">
+        <button id="btnStart">Start Game!</button>
+        <button id="btnReset">Reset Game!</button>
+
+
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+
+        <p id="log"></p>
+
+
+    </main>
+    <script>
+        let input = document.getElementById("myIn");
+        let btnStart = document.getElementById("btnStart");
+        let btnReset = document.getElementById("btnReset");
+        let div = document.getElementById("div1");
+        let div2 = document.getElementById("div2");
+        let div3 = document.getElementById("div3");
+        let p = document.getElementById("log");
+
+        let s = 0;
+        let l = 0;
+
+        let time = 0;
+
+
+
+
+
+        function resetGame() {
+
+            s = 0;
+            l = 0;
+            input.value = 0;
+
+
+        };
+        1
+
+
+        function checkWinner(s, l) {
+            if (s > l) {
+                p.textContent = "S won!";
+            }
+            if (s < l) {
+                p.textContent = "L won";
+            }
+            if (s == l) {
+                p.textContent = "Tie";
+            }
+        };
+
+
+
+        btnStart.addEventListener('click', (e) => {
+            e.preventDefault(); // disable the refresh on the page when submit
+            let time = input.value;
+
+
+
+            function logKey(e) {
+
+                //Trying to set countdown
+
+                setInterval(function() {
+
+                    time--;
+                    if (time === 0) {
+                        div3.textContent = time;
+                    }
+                }, 1000);
+
+                if (e.code == "KeyS") {
+                    s++;
+                    div.textContent = s;
+                } else if (e.code == "KeyL") {
+                    l++;
+                    div2.textContent = l;
+                } else {
+                    p.textContent = "Error:You did not press gaming key!";
+                }
+
+
+
+
+
+
+                checkWinner(s, l);
+
+
+            }
+
+
+
+
+
+            for (let i = 0; i < 2; i++) {
+                setTimeout(() => {
+
+                    document.removeEventListener('keydown', logKey);
+
+
+
+
+
+                }, time * 1000);
+            }
+
+
+
+            document.addEventListener('keydown', logKey);
+
+            btnReset.addEventListener("click", resetGame);
+
+
+
+        });
+
+
+
+
+        /*
+
+        //First version of exercise, not working
+
+
+        
+             btnStart.addEventListener("click", startGame);
+            
+
+             document.addEventListener("keypress", game);
+
+             function game() {
+                 if (input.value = '') {
+                     resetGame();
+                 } else {
+                     startGame();
+                 }
+                 countdown = input.value * 1000;
+
+                 for (let i = 0; i < 2; i++) {
+                     time = setTimeout(() => {
+
+                         if (s == l) {
+                             div.textContent = "Tie";
+
+                         }
+
+                         if (s > l) {
+                             div.textContent = 'S won!';
+                         }
+
+
+                         if (s < l) {
+                             div.textContent = 'L won!';
+                         }
+
+                         play = false;
+
+                     }, countdown);
+                 }
+             }
+
+
+
+
+
+             function startGame(event) {
+                 if (!play) {
+                     return;
+                 }
+                 if (event.code == "KeyS") {
+                     s++
+                     div.textContent = s;
+                 }
+                 if (event.code == "KeyL") {
+                     l++;
+                     div.textContent = l;
+                 }
+             }
+
+             function resetGame() {
+                 time = 0;
+                 s = 0;
+                 l - 0;
+                 input.value = 0;
+                 countdown = 0;
+
+             }*/
+    </script>
+
+</body>
+<html>
