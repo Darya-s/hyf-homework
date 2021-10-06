@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#maindiv {
+    display: block;
+    width: 960px;
+    background-color: azure;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    line-height: 2rem;
+}
+
+input {
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+    color: gray;
+    transition: 0.1s ease-out;
+}
+
+input:focus {
+    border-color: cadetblue;
+}
+
+input:focus+label {
+    color: cadetblue;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+input:not(:placeholder-shown)+label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+#selection {
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+    color: gray;
+    transition: 0.1s ease-out;
+}
+
+#selection:focus {
+    border-color: cadetblue;
+}
+
+#selection:focus+label {
+    color: cadetblue;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+#selection:not(:placeholder-shown)+label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+button {
+    background-color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    border-color: cadetblue;
+    font-size: 1rem;
+    outline: none;
+}
+
+button:hover {
+    background-color: cadetblue;
+    opacity: 0.5;
+}
