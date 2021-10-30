@@ -22,20 +22,12 @@ app.get("/", async (request, response) => {
 });
 
 app.get("/cheap-meals", async (request, response) => {
-  const cheapMeals = mealsReview.map((meal) => {
-    if (meal.price < 150) {
-      return meal;
-    }
-  });
+  const cheapMeals = mealsReview.filter(meal.price<150); 
   response.send(cheapMeals);
 });
 
 app.get("/large-meals", async (request, response) => {
-  const largeMeals = mealsReview.filter((meal) => {
-    if (meal.maxNumberOfGuests > 15) {
-      return meal;
-    }
-  });
+  const largeMeals = mealsReview.filter((meal) => meal.maxNumberOfGuests > 15);
   response.send(largeMeals);
 });
 
