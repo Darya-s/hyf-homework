@@ -4,12 +4,11 @@ const router = express.Router();
 const reservations = require("../data/reservations.json");
 
 router.get("/", async (request, response) => {
-    response.send(reservations);
+    
   try {
-    console.log(reservations);
-    console.log("in /api/reservations");
+    response.send(reservations);
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 });
 

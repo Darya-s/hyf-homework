@@ -5,12 +5,11 @@ const router = express.Router();
 const reviews = require("../data/reviews.json");
 
 router.get("/", async (request, response) => {
-    response.send(reviews);
+  
   try {
-    console.log(reviews);
-    console.log("in /api/reviews");
+    response.send(reviews);
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 });
 

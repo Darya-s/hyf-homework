@@ -15,7 +15,7 @@ if (maxPrice || searchTitle || createdAfter || limit) {
   
   if (maxPrice) {
     newMeals=newMeals.filter((meal) => meal.price <= parseInt(maxPrice));
-    response.json(newMeals);
+    
   }
 
   // Get meals that partially match a title.
