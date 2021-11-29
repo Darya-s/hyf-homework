@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "Italian delghts",
+        "maxNumberOfGuests" : 7,
+        "description" : "Immerse in a real italian atmosphere",
+        "createdAt" : "2021/10/12 18:00",
+        "price" : 160
+    },
+    {
+        "id" : 3,
+        "title" : "Russian food",
+        "maxNumberOfGuests" : 10,
+        "description" : "From Russia with love",
+        "createdAt" : "2021/10/17 19:00",
+        "price" : 200
+    }
+]
