@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function inputField({id}) {
+
+function inputField({description}) {
   
   return (
     <>

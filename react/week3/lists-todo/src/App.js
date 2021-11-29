@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import List from "./List";
-import InputField from "InputField";
+import InputField from "./InputField";
 
 import "./App.css";
-import ListItem from "./ListItem";
+
 
 const todoList = [
   {
@@ -43,7 +43,7 @@ let updateItem=(eventValue)=>{
   newList.map((x) => {
       return x.id;
     })
-    .indexOf(id);
+    .indexOf(eventValue);
 setDescription(eventValue);
 }
 
