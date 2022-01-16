@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function Todo({ listItem, deleteListItem, handleAddInput }) {
+
+function ListItem({ listItem, deleteListItem, addFormFields }) {
   const [value, setValue] = useState(false);
 
   return (
@@ -15,19 +16,15 @@ function Todo({ listItem, deleteListItem, handleAddInput }) {
           onChange={(e) => setValue(e.target.checked)}
         ></input>
 
-        <button onClick={() => deleteListItem(listItem.id)}>Delete</button>
-        <button
-          onClick={() => (
-            <input
-              type="text"
-              onInput={(e) => handleAddInput(e.target.value, listItem.id)}
-            ></input>
-          )}
-        >
+        <button type="submit" onClick={() => deleteListItem(listItem.id)}>Delete</button>
+        <button type="button"
+          onClick={(e) => addFormFields(listItem.id)}
+           
+          >
           Edit
         </button>
       </li>
     </>
   );
 }
-export default Todo;
+export default ListItem;

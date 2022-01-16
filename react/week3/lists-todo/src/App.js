@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import TodoList from "./TodoList";
+import List from "./List";
+import InputField from "./InputField";
 
 import "./App.css";
+
 
 const todoList = [
   {
@@ -26,16 +28,25 @@ function App() {
   const [deadline, setDeadline] = useState("");
   const [list, setList] = useState(todoList);
 
-  function handleAddInput(desc, id) {
-    const newList = [...list];
-    newList
-      .map((item) => {
-        return item.id;
-      })
-      .indexOf(id);
 
-    setDescription(desc);
-  }
+
+
+  let addFormFields=(id)=>{
+   
+      return(
+        <InputField id={id}/>
+      )
+}
+
+let updateItem=(eventValue)=>{
+  const newList = [...list];
+  newList.map((x) => {
+      return x.id;
+    })
+    .indexOf(eventValue);
+setDescription(eventValue);
+}
+
 
   function deleteListItem(id) {
     const newList = [...list];
@@ -57,6 +68,13 @@ function App() {
     setDescription("");
     setDeadline("");
   }
+
+
+
+
+
+
+
   const [timer, setTimer] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,23 +86,21 @@ function App() {
     <>
       {list.length === 0 && <p>No item</p>}
       <h3>you have used {timer}seconds on this page</h3>
-      <TodoList
+      <List
         list={list}
         deleteListItem={deleteListItem}
-        handleAddInput={handleAddInput}
+        addFormFields={addFormFields}
+        updateItem={updateItem}
       />
-      <label htmlFor="description"></label>
-      <input
-        type="text"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      ></input>
+     
+     
       <input
         type="date"
         value={deadline}
         onChange={(e) => setDeadline(e.target.value)}
       />
-      <button type="submit" onClick={() => addNewTodo(description, deadline)}>
+      <button type="submit" onClick={() => addNewTodo(description, deadline)
+      }>
         add
       </button>
     </>
