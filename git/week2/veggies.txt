@@ -1,5 +1,7 @@
 oranges
 bananas
-kiwi
+pear
 clementins
 apples
+grape
+melon
