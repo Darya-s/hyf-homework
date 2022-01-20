@@ -1,7 +1,13 @@
 oranges
 bananas
+<<<<<<< HEAD
 pear
 clementins
 apples
 grape
 melon
+=======
+watermelon
+clementins
+apples
+>>>>>>> 372c613c9015f856ea7d3d7bcfbb4aca7e8e1f0e
